@@ -16,11 +16,11 @@ body {
     background-color: var(--negro-fondo);
     color: white;
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* Eliminamos display: flex, justify-content y align-items */
+    display: block; 
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
-    padding: 20px;
 }
 
 .container {
@@ -69,9 +69,23 @@ h1 {
     background: var(--negro-card);
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    /* Borde inicial sutil */
+    border: 1px solid rgba(212, 175, 55, 0.2); 
     margin-bottom: 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    /* Transición para el efecto de movimiento */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+}
+
+/* Efecto al pasar el mouse */
+.card:hover {
+    /* Resalta el borde con el dorado sólido */
+    border-color: var(--dorado-solido); 
+    /* Eleva el recuadro y lo inclina ligeramente */
+    transform: translateY(-10px) scale(1.02); 
+    /* Sombra más profunda para dar sensación de altura */
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2); 
 }
 
 .card h3 {
@@ -137,4 +151,44 @@ h1 {
 @media (max-width: 600px) {
     h1 { font-size: 1.8rem; }
     .profile-img { width: 120px; height: 120px; }
+}
+
+.contact-section {    
+    width: 100%;
+    clear: both; /* Fuerza a bajar si hay elementos flotados */
+    background-color: white;
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center;
+    color: black;
+}
+
+.contact-section h2 {
+  font-size: 1.4rem; /* Un poco más pequeña para ahorrar espacio */
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section p {
+    font-size: 1rem;
+    margin: 2px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+/* 1. Ajuste para que la imagen suba al tope */
+.main-layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 20px;
+    align-items: flex-start; /* Cambiado de 'center' a 'flex-start' para subir la imagen */
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #555; /* Un gris oscuro para que sea sutil sobre el fondo blanco */
+    border-top: 1px solid #eee; /* Una línea divisoria muy tenue */
+    padding-top: 10px;
 }
