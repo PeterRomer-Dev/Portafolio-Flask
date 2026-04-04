@@ -148,9 +148,19 @@ h1 {
 }
 
 /* Ajustes para teléfonos */
-@media (max-width: 600px) {
-    h1 { font-size: 1.8rem; }
-    .profile-img { width: 120px; height: 120px; }
+@media (max-width: 768px) {
+    .sidebar-image {
+        display: none !important;
+    }
+
+    .main-layout {
+        margin: 20px auto; /* Reducimos el margen superior en móvil */
+        padding: 0 15px;   /* Añadimos un poco de aire a los lados */
+    }
+
+    .container {
+        flex: 1; /* Permite que el contenido principal ocupe todo el ancho */
+    }
 }
 
 .contact-section {    
