@@ -17,18 +17,27 @@
 <body>
     <div class="card-registro">
         <div class="menu-top">
+            <a href="/" style="text-decoration: none;">
+                <button class="btn-menu">🏠 Inicio</button>
+            </a>
+            
             <button class="btn-menu">+ Agregar</button>
             <button type="submit" form="regForm" class="btn-menu">💾 Guardar</button>
         </div>
+        
         <form id="regForm" action="/guardar" method="POST">
             <label>Nombre y Apellido</label>
             <input type="text" name="nombre" required>
+            
             <label>Cédula</label>
             <input type="text" name="cedula" required>
+            
             <label>Teléfono</label>
             <input type="text" name="telefono">
+            
             <label>Fecha de Nacimiento</label>
             <input type="date" name="fecha_nac">
+            
             <label>Correo Electrónico</label>
             <input type="email" name="correo" required>
         </form>

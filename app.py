@@ -116,6 +116,6 @@ def verificar():
 # --- INICIO DE LA APLICACIÓN ---
 if __name__ == '__main__':
     crear_db()  # Crea la DB si no existe cada vez que inicias el servidor
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
     # Fin de la jornada de hoy
